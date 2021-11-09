@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.ShoeStore." parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryTextColor</item>
+    </style>
+
+    <style name="Theme.ShoeStore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="button">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:backgroundTint">@color/secondaryColor</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">20sp</item>
+        <item name="cornerRadius">16dp</item>
+     </style>
+
+    <style name="header">
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">80sp</item>
+    </style>
+
+    <style name="hintBoxes">
+        <item name="android:fontFamily">casual</item>"
+        <item name="android:textColorHint">@color/primaryDarkColor</item>
+        <item name="android:ems">10</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="secondaryText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@color/primaryDarkColor</item>
+    </style>
+
+
+    <style name="pageColor">
+        <item name="android:background">@color/cardview_dark_background</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

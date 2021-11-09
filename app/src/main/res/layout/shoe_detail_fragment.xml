@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--I wanted to be able to chain the views together without overlapping.
+ So, I used constraint layout-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoeViewModel"
+            type="android.example.shoestore.ShoeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/pageColor">
+
+        <TextView
+            android:id="@+id/shoe_detail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/add_shoes_text"
+            android:theme="@style/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/shoe_name_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/shoe_name"
+            android:inputType="text"
+            android:text="@={shoeViewModel.name}"
+            android:theme="@style/hintBoxes"
+            app:layout_constraintBottom_toTopOf="@+id/company_name_editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_detail_text"
+            app:layout_constraintVertical_bias="0.17000002"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/company_name_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/company"
+            android:inputType="text"
+            android:text="@={shoeViewModel.company}"
+            android:theme="@style/hintBoxes"
+            app:layout_constraintBottom_toTopOf="@+id/shoe_size_editNum"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_name_editText"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_editText"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/shoe_size_editNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/shoe_size"
+            android:inputType="number"
+            android:text="@={shoeViewModel.size}"
+            android:theme="@style/hintBoxes"
+            app:layout_constraintBottom_toTopOf="@+id/shoe_description_editText"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_description_editText"
+            app:layout_constraintStart_toStartOf="@+id/company_name_editText"
+            app:layout_constraintTop_toBottomOf="@+id/company_name_editText"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/shoe_description_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:inputType="text"
+            android:text="@={shoeViewModel.description}"
+            android:theme="@style/hintBoxes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_size_editNum"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:theme="@style/button"
+            app:layout_constraintBottom_toBottomOf="@+id/save_button"
+            app:layout_constraintEnd_toStartOf="@+id/save_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:theme="@style/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_description_editText"
+            app:layout_constraintVertical_bias="0.78"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

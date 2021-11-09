@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--I want to be able to put this side by side but make sure they didn't overlap.
+So, I used constraint -->
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/pageColor">
+
+        <TextView
+            android:id="@+id/login_header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/header"
+            android:layout_marginTop="16dp"
+            android:text="@string/login"
+            app:layout_constraintBottom_toTopOf="@+id/emailAddress_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26" />
+
+        <EditText
+            android:id="@+id/emailAddress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/hintBoxes"
+            android:layout_marginTop="32dp"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/password_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/password_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/hintBoxes"
+            android:layout_marginTop="32dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/emailAddress_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/emailAddress_text"
+            app:layout_constraintTop_toBottomOf="@+id/emailAddress_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/newLogin_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/new_account"
+            android:theme="@style/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/existingUser_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_text"
+            app:layout_constraintVertical_bias="0.78" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/existingUser_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/existing_user"
+            android:theme="@style/button"
+            app:layout_constraintBottom_toBottomOf="@+id/newLogin_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newLogin_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
